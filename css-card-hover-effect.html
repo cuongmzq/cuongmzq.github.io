@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            background: gray;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 300px;
+            position: relative;
+            background: hotpink;
+            overflow: hidden;
+        }
+
+        .card .cover {
+            filter: grayscale(100%);
+            background: url('gummy-desktop.png'), lightcoral;
+            background-size: 110%;
+            background-position: center 65%;
+            z-index: 1000;
+            transition: 0.6s ease-in-out;
+        }
+
+        .card .cover::before {
+            content: '';
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            z-index: 10000;
+            transition: 0.4s ease-in-out;
+        }
+
+        .card:hover .cover::before {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .card:hover .cover {
+            filter: none;
+        }
+
+        .card .cover {
+            flex: 1 1 200px;
+        }
+
+        .card .content {
+            flex: 0 0 0px;
+        }
+
+        .card h1 {
+            font-size: 18px;
+            color: white;
+            font-weight: 900;
+            text-align: center;
+            position: relative;
+            top: 150px;
+            text-transform: uppercase;
+
+        }
+
+        .card .content {
+            background: white;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: 300;
+            text-align: justify;
+            transform: translateY(-100%);
+            transition: 0.4s ease-in-out;
+        }
+
+        .card:hover .content {
+            display: block;
+            transform: translateY(0);
+        }
+
+        .card .content p {
+            margin-bottom: 10px;
+        }
+
+        .card .content a {
+            display: inline-block;
+            border: black 1px solid;
+            padding: 5px;
+        }
+    </style>
+    <div class="card">
+        <div class="cover">
+            <h1>Design</h1>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, exercitationem ab cupiditate animi quos
+                assumenda quia totam a eum molestias!</p>
+            <a href="#">Read more.</a>
+        </div>
+    </div>
+</body>
+
+</html>
