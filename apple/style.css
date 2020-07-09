@@ -23,7 +23,7 @@ a {
 main {
     margin: 0 auto;
     max-width: 2000px;
-    padding-top: 50px;
+    padding-top: 100px;
 }
 
 .container {
@@ -31,14 +31,28 @@ main {
 }
 
 /* ------------------- HEADER FIXED -------------------- */
+.main-nav #github {
+    position: relative;
+    background: #2997FF;
+    display: block;
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.main-nav #github a {
+    color: white;
+    text-decoration: none;
+}
 
 .main-nav {
-    width: 100%;
     background-color: #1d1d1f;
+    width: 100%;
     font-size: 1rem;
-    height: 50px;
+    height: 100px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     position: fixed;
     opacity: 0.95;
     z-index: 2;
